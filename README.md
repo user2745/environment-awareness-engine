@@ -1,60 +1,77 @@
----
-
-# **Generic Unit of Capability**
+### **README: Physical Environment Integration**
 
 ---
 
-## **Overview**
-This project demonstrates a generic Unit of Capability, designed to process and transform data in a meaningful way. The unit consists of three core components:
-1. **Data Ingestion**: Fetches raw data from a specified endpoint.
-2. **Processing**: Transforms the data into a usable format.
-3. **Logging**: Outputs the processed data for review or further use.
+#### **Overview**
+The **Physical Environment Integration** capability makes Nova aware of the physical space using cameras and sensors. It processes real-time video feeds to detect objects, recognize activities, and generate contextual insights.
 
 ---
 
-## **Features**
-- Fetches live data from an API.
-- Processes data to round numeric values for clarity.
-- Logs the processed data for validation.
+#### **Features**
+- Real-time object detection using a camera feed.
+- Activity recognition from video sequences.
+- Aggregated environmental context for actionable insights.
+- Supports live camera feeds and saved video analysis.
+- Modular and extensible architecture.
 
 ---
 
-## **How to Run**
-1. Install dependencies:
+#### **File Structure**
+```
+physical_environment_integration/
+├── protocols/
+│   ├── camera_feed_protocol.py    # Handles live camera feeds
+│   ├── video_loader_protocol.py   # Handles video file loading
+├── modules/
+│   ├── object_detection.py        # Detects objects in frames
+│   ├── activity_recognition.py    # Recognizes activities
+│   ├── context_aggregator.py      # Aggregates context from inputs
+├── engines/
+│   ├── core_engine.py             # Core logic for processing environment
+├── main.py                        # Main entry point for the system
+├── requirements.txt               # Dependencies
+```
+
+---
+
+#### **Getting Started**
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-repo/physical-environment-integration.git
+   cd physical-environment-integration
    ```
+
+2. **Install Dependencies**:
+   ```bash
    pip install -r requirements.txt
    ```
-2. Start the script:
-   ```
+
+3. **Run the System**:
+   ```bash
    python main.py
    ```
 
----
-
-## **Example Output**
-When executed, the program outputs:
-```
-Fetched Data: {'cpu': 70.12345, 'memory': 50.98765, 'disk': 30.54321}
-Processed Data: {'cpu': 70.12, 'memory': 50.99, 'disk': 30.54}
-Logged Data: {'cpu': 70.12, 'memory': 50.99, 'disk': 30.54}
-```
+4. **Commands**:
+   - `analyze`: Analyze the environment and display insights.
+   - `exit`: Save the system state and exit.
 
 ---
 
-## **Structure**
-- **`main.py`**: Orchestrates the Unit of Capability.
-- **`modules/`**:
-  - **`data_ingestion.py`**: Fetches raw data from an endpoint.
-  - **`processing.py`**: Processes raw data to round numeric values.
-  - **`logging.py`**: Logs processed data.
+#### **Requirements**
+- Python 3.8+
+- Camera hardware (e.g., webcam).
+- Pre-trained object detection model (e.g., YOLOv5).
+- `requirements.txt` dependencies:
+  - `opencv-python`
+  - `numpy`
+  - `torch` (for YOLO)
 
 ---
 
-## **Future Enhancements**
-- Add support for nested data structures.
-- Enable real-time data updates.
-- Implement advanced logging mechanisms.
+#### **Next Steps**
+- Replace placeholder models with your pre-trained YOLO or SSD.
+- Extend activity recognition logic for complex scenarios.
+- Integrate additional sensors (e.g., motion detectors) for enhanced context.
 
 ---
-
-Let me know if this works or needs adjustments! 🚀

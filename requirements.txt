@@ -1,2 +1,6 @@
-flask
-requests
+opencv-python==4.8.0.76
+numpy==1.24.5
+yolov5==6.0  # YOLOv5 for object detection, or adjust based on specific implementation
+torch==2.0.1  # PyTorch, required for YOLOv5
+torchvision==0.15.2  # PyTorch utilities
+matplotlib==3.7.2  # For visualization (optional)
